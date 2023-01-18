@@ -5,6 +5,8 @@
 #include <Windows.h>
 #include <fstream>
 #include "rechenoperationen.h"
+#include "luca.h"
+#include "florian.h"
 // simplesnippets im suchfeld eingeben für die snippet datei
 
 using namespace std;
