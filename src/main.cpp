@@ -15,8 +15,6 @@ using namespace std;
 //                           MAIN
 //=============================================================================
 
-
-
 int main()
 {
     srand(time(NULL));
@@ -27,8 +25,29 @@ int main()
 
     while (input.length() > 0)
     {
+        char op = ' ';
+        size_t op_pos = string::npos;
 
-        
+        for (int i = 0; i < input.length(); i++)
+        {
+            op = input[i];
+            if (op == '+' || op == '-' || op == '*' || op == '/')
+            {
+                op_pos = input.find(op);
+                break;
+            }
+        }
+
+        float x = 0.0;
+        float y = 0.0;
+        string operand_str1 = input.substr(0, op_pos);
+        string operand_str2 = input.substr(op_pos + 1);
+        int space_pos = operand_str2.find(' ');
+        operand_str2 = operand_str2.substr(0, space_pos);
+        x = stof(operand_str1);
+        y = stof(operand_str2);
+        int laenge = operand_str1.length() + operand_str2.length() + 1;
+
         switch (op)
         {
         case '+':
